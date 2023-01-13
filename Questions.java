@@ -1,7 +1,4 @@
 package JavaPracticeTest;
-
-import JavaPracticeTest.QBuilder;
-
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,7 +12,6 @@ public class Questions {
 
     private String getNextStringLineFromUser() {
         //scanner.nextLine();
-        Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
     }
     void question1() {
@@ -34,10 +30,11 @@ public class Questions {
             while (!userResponse.equalsIgnoreCase(qBuilder.getCorrectAnswer())) {
                 System.out.println("Incorrect, please try again.");
                 userResponse = getNextStringLineFromUser();
-                
+
             }
             if (userResponse.equalsIgnoreCase(qBuilder.getCorrectAnswer())) {
                 System.out.println("Correct!");
+                System.out.println();
             }
         }
     }

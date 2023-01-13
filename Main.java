@@ -80,10 +80,10 @@ public class Main {
                                         "24"),
                                 new QBuilder(String.format("Which of the following is the correct way to create a constructor for the code below?%npublic class Person {%n    private int personId;"),
                                         "b",
-                                        String.format("public int Person(int personId) {%nthis.personId = personId;%n}"),
-                                        String.format("public Person(int personId) {%nthis.personId = personId;%n}"),
-                                        String.format("public Person(int personId) {%npersonId = this.personId;%n}"),
-                                        String.format("public int Person(personId) {%nint this.personId = personId;%n}")),
+                                        String.format("%npublic int Person(int personId) {%nthis.personId = personId;%n}"),
+                                        String.format("%npublic Person(int personId) {%nthis.personId = personId;%n}"),
+                                        String.format("%npublic Person(int personId) {%npersonId = this.personId;%n}"),
+                                        String.format("%npublic int Person(personId) {%nint this.personId = personId;%n}")),
                                 new QBuilder("What is it called when you have multiple constructors with the same name but different parameters in a class?",
                                         "c",
                                         "Overriding",
@@ -92,23 +92,40 @@ public class Main {
                                         "Nothing. It's impossible to have multiple constructors in the same class."),
                                 new QBuilder("What is the proper syntax for the main method?",
                                         "d",
-                                        "public static main(String[] args) {",
-                                        "public void main(String args) {",
-                                        "public static void main(String args[]) {",
+                                        "public void static main(String[] args) {",
+                                        "public void static main(String args) {",
+                                        "public static main(String args[]) {",
                                         "public static void main(String[] args) {"),
-                                new QBuilder("Which terminal command would you use to see the gits you have already commited and pushed?",
+                                new QBuilder("Which terminal command would you use to see the gits you have already committed and pushed?",
                                         "a",
                                         "git log",
                                         "git status",
                                         "git init",
-                                        "git commit")
+                                        "git commit"),
+                                new QBuilder("What is the correct order of Integer (whole number) primitive data types from smallest to largest?",
+                                        "b",
+                                        "short, byte, int, long",
+                                        "byte, short, int, long",
+                                        "byte, int, short, long",
+                                        "int, byte, short, long"),
+                                new QBuilder("What is the correct way to compare strings for equality?",
+                                        "c",
+                                        "==",
+                                        "&&",
+                                        ".equals()",
+                                        ".equal()"),
+                                new QBuilder("What is the syntax to declare an array?",
+                                        "d",
+                                        "dataType() variableName;",
+                                        "dataType[] variableName{};",
+                                        "dataType{} variableName;",
+                                        "dataType[] variableName;")
                         )
                 );
         Questions questions = new Questions(new Scanner(new InputStreamReader(System.in, StandardCharsets.UTF_8)), qBuilders);
-        System.out.println("Java Test");
-        System.out.println(String.format("Enter the letter of the correct answer to move on to the next question.%nThere is only one correct answer per question."));
-
+        System.out.println(String.format("Java Practice Test%nEnter the letter of the correct answer to move onto the next question.%nThere is only one correct answer per question."));
+        System.out.println("There are a total of " + qBuilders.size() + " questions.");
+        System.out.println();
         questions.question1();
-
     }
 }
